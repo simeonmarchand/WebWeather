@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/weather', async function (req, res) {
+app.get('/', async function (req, res) {
     const location = query.location;
     const apiKey = process.env.WEATHER_API_KEY;
     const apiEndpoint = `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${location}`;
